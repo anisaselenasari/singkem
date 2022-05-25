@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>App</title>
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <p style="margin-bottom: 20px; font-size: 25px">
+          Sistem Keamanan Motor
+        </p>
+        <h1>SINGKEM</h1>
+        <p>Date : 2/7/2022</p>
+        <p>Time : 12:53:00 PM</p>
+      </div>
+
+      <div class="content">
+        <div class="content-tittle">
+          <p style="margin-bottom: 20px; font-weight: bold">Keamanan Motor</p>
+          <div class="content-item">
+            <p>Mesin Motor</p>
+            <!-- <div class="toggle-btn"> -->
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider round"></span>
+            </label>
+            <!-- <div class="circle"></div> -->
+            <!-- </div> -->
+          </div>
+
+          <div class="content-item">
+            <p>Buzzer Motor</p>
+            <!-- <div class="toggle-btn"> -->
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider round"></span>
+            </label>
+            <!-- <div class="circle"></div> -->
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="content-tittle">
+          <p style="margin-bottom: 20px; font-weight: bold">Posisi Motor</p>
+        </div>
+      </div>
+
+      <button onclick="handleOpen()" class="btn-maps">
+        Click to open google maps
+      </button>
+    </div>
+  </body>
+</html>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".toggle-btn").click(function () {
+      $(this).toggleClass(".toggle-btn active");
+    });
+  });
+
+  //Receive lat and lng based on sensor data
+  let lat = 10.99835602;
+  let lng = 77.01502627;
+
+  //Function to open google maps on new tab
+  const handleOpen = () => {
+    window
+      .open(`https://www.google.com/maps?q=${lat},${lng}`, "_blank")
+      .focus();
+  };
+</script>
